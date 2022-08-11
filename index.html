@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+        <title>Interactive Photo Gallery</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <input id="searchbar" onkeyup="srchbar()" type="text" name="search" placeholder="Search">
+            <div class="grid">
+
+                <!-- Images used to open the lightbox -->
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(1)" src="img/thumbnails/01.jpg" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(2)" src="img/thumbnails/02.jpg" alt="The lake was so calm today. We had a great view of the snow on the mountains from here.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(3)" src="img/thumbnails/03.jpg" alt="I hiked to the top of the mountain and got this picture of the canyon and trees below.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(4)" src="img/thumbnails/04.jpg" alt="It was amazing to see an iceberg up close, it was so cold but didn’t snow today.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(5)" src="img/thumbnails/05.jpg" alt="The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(6)" src="img/thumbnails/06.jpg" alt="Fall is coming, I love when the leaves on the trees start to change color.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(7)" src="img/thumbnails/07.jpg" alt="I drove past this plantation yesterday, everything is so green!">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(8)" src="img/thumbnails/08.jpg" alt="My summer vacation to the Oregon Coast. I love the sandy dunes!">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(9)" src="img/thumbnails/09.jpg" alt="We enjoyed a quiet stroll down this countryside lane.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(10)" src="img/thumbnails/10.jpg" alt="Sunset at the coast! The sky turned a lovely shade of orange.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(11)" src="img/thumbnails/11.jpg" alt="I did a tour of a cave today and the view of the landscape below was breathtaking.">
+                </div>
+                <div class="column">
+                    <img class="img cursor" onclick="openModal();currentSlide(12)" src="img/thumbnails/12.jpg" alt="I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.">
+                </div>
+            
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 12</div>
+                            <img class="fullImg" src="img/fullsize/01.jpg" alt="Hay Bales">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 12</div>
+                            <img class="fullImg" src="img/fullsize/02.jpg" alt="Lake">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 12</div>
+                            <img class="fullImg" src="img/fullsize/03.jpg" alt="Canyon">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 12</div>
+                            <img class="fullImg" src="img/fullsize/04.jpg" alt="Iceberg">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 12</div>
+                            <img class="fullImg" src="img/fullsize/05.jpg" alt="Desert">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 12</div>
+                            <img class="fullImg" src="img/fullsize/06.jpg" alt="Fall">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">7 / 12</div>
+                            <img class="fullImg" src="img/fullsize/07.jpg" alt="Plantation">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">8 / 12</div>
+                            <img class="fullImg" src="img/fullsize/08.jpg" alt="Dunes">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">9 / 12</div>
+                            <img class="fullImg" src="img/fullsize/09.jpg" alt="Countryside Lane">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">10 / 12</div>
+                            <img class="fullImg" src="img/fullsize/10.jpg" alt="Sunset">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">11 / 12</div>
+                            <img class="fullImg" src="img/fullsize/11.jpg" alt="Cave">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">12 / 12</div>
+                            <img class="fullImg" src="img/fullsize/12.jpg" alt="Bluebells">
+                        </div>
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <!-- Caption text -->
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <!-- Thumbnail image controls -->
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(1)" src="img/thumbnails/01.jpg" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(2)" src="img/thumbnails/02.jpg" alt="The lake was so calm today. We had a great view of the snow on the mountains from here.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(3)" src="img/thumbnails/03.jpg" alt="I hiked to the top of the mountain and got this picture of the canyon trees below.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(4)" src="img/thumbnails/04.jpg" alt="It was amazing to see an iceberg up close, it was so cold but didn't snow today.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(5)" src="img/thumbnails/05.jpg" alt="The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(6)" src="img/thumbnails/06.jpg" alt="Fall is coming, I love when the leaves on the trees start to change color.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(7)" src="img/thumbnails/07.jpg" alt="I drove past this plantation yesterday, everything is so green!">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(8)" src="img/thumbnails/08.jpg" alt="My summer vacation to the Oregon Coast. I love the sandy dunes!">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(9)" src="img/thumbnails/09.jpg" alt="We enjoyed a quiet stroll down this countryside lane.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(10)" src="img/thumbnails/10.jpg" alt="Sunset at the coast! The sky turned a lovely shade of orange.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(11)" src="img/thumbnails/11.jpg" alt="I did a tour of a cave today and the view of the landscape below was breathtaking.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" onclick="currentSlide(12)" src="img/thumbnails/12.jpg" alt="I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
