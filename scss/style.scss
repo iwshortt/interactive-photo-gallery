@@ -1,3 +1,4 @@
+// Grid layout
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -6,6 +7,8 @@
     max-width: 950px;
     margin: 0 auto;
 }
+
+// Searchbar
 input {
     width: 75%;
     max-width: 550px;
@@ -18,16 +21,23 @@ input {
     appearance: none;
     border-style: solid;
 }
+
+// Adjust thumbnail image in lightbox
 .column {
     display: inline-block;
 }
+
+// Lightbox Image 
 .fullImg {
     width: 100%;
 }
+
+// Add cursors
 .cursor:hover,
 .cursor:active {
     cursor: pointer;
 }
+
 /* The Modal (background) */
 .modal {
     display: none;
